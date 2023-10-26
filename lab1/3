@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   int br, nov_br;
+   int poslednacifra,prvacifra;
+   int zbir;
+   cin>>br;
+
+   poslednacifra=br%10;
+   prvacifra=br/10000;
+   zbir=prvacifra+poslednacifra;
+
+   br=br/10;
+   nov_br=br%1000;
+
+   cout<<nov_br<<endl;
+   cout<<zbir<<endl;
+
+
+
+}
