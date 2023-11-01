@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int x, y, temp;
+  cin>>x;
+  cin>>y;
+  int cifra;
+  int obraten_br;
+  for(int i=x; i<=y; i++)
+  {
+      temp=i;
+      obraten_br=0;
+      while(temp>0) {
+          cifra = temp % 10;
+          obraten_br = obraten_br * 10 + cifra; //123
+          temp/=10;
+      }
+      if(i==obraten_br)
+      {
+          cout<<i<<" ";
+      }
+
+  }
+}
