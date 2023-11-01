@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int n=1000;
+  int c1, c2, c3, c4;
+  int zbir=0;
+    while(n<=9999)
+    {
+        c4=n%10;
+        c3=n%100/10;
+        c2=n%1000/100;
+        c1=n/1000;
+        zbir=c2+c3+c4;
+        if(c1==zbir)
+        {
+            cout<<n<<" ";
+        }
+        n++;
+    }
+}
