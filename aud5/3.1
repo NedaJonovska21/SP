@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   int n;
+   cin>>n;
+
+   int deliviso3=0;
+   int soostatok1=0;
+   int soostatok2=0;
+
+   for(int i=0; i<n; i++)
+   {
+       if(i%3==0)
+       {
+           deliviso3++;
+       }
+       else if(i%3==1)
+       {
+           soostatok1++;
+       }
+       else if(i%3==2)
+       {
+           soostatok2++;
+       }
+
+   }
+
+   cout<<"ima "<<deliviso3<<" broja koi se dellivi so br 3"<<endl;
+   cout<<"ima "<<soostatok1<<" broevi koi pri delenje so 3 imaat ostatok 1"<<endl;
+    cout<<"ima "<<soostatok2<<" broevi koi pri delenje so 3 imaat ostatok 2"<<endl;
+
+}
