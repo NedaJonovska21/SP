@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+int m, n, i;
+cin>>m>>n;
+int temp=0, cifra=0;
+bool isTrue=false;
+
+for(i=m; i<=n; i++)
+{
+    temp=i;
+    while(temp>0)
+    {
+        cifra=temp%10;
+        temp/=10;
+        if(cifra%2==0)
+        {
+            isTrue=true;
+        }
+        else
+        {
+            isTrue=false;
+            break;
+        }
+
+    }
+    if(isTrue)
+    {
+        cout<<i<<endl;
+        break;
+    }
+
+}
+if(isTrue==false)
+{
+    cout<<"NE"<<endl;
+}
+}
