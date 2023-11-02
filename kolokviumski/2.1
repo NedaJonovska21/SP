@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+
+int main() {
+    int n, i, temp;
+    int obraten=0;
+    int brnacifri=0;
+    int cifra=0;
+    int isInteresting=0;
+
+    scanf("%d", &n);
+    if(n<9)
+    {
+        printf("Brojot ne e validen");
+    }
+    else
+    {
+        for(i=n-1; i>=9; i--) {
+            temp = i;
+            while (temp) {
+                cifra = temp % 10;
+                obraten = obraten * 10 + cifra;
+                brnacifri++;
+                temp /= 10;
+            }
+            if (obraten % brnacifri == 0) {
+                isInteresting = 1;
+
+            } else {
+                isInteresting = 0;
+
+            }
+            brnacifri = 0;
+            obraten = 0;
+            if (isInteresting == 1) {
+                printf("%d", i);
+                break;
+            }
+
+        }
+
+    }
+
+}
