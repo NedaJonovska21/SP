@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, i, temp;
+    int obraten=0;
+    int brnacifri=0;
+    int cifra=0;
+    bool isInteresting=false;
+
+    cin>>n;
+    if(n<9)
+    {
+        cout<<"Brojot ne e validen"<<endl;
+    }
+    else
+    {
+        for(i=n-1; i>=9; i--) {
+            temp = i;
+            while (temp) {
+                cifra = temp % 10;
+                obraten = obraten * 10 + cifra;
+                brnacifri++;
+                temp /= 10;
+            }
+            if (obraten % brnacifri == 0) {
+                isInteresting = true;
+
+            } else {
+                isInteresting = false;
+
+            }
+            brnacifri = 0;
+            obraten = 0;
+            if (isInteresting == true) {
+                cout << i << endl;
+                break;
+            }
+
+        }
+
+    }
+
+}
