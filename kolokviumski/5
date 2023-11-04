@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n1, n2, cifra1, cifra2;
+    cin>>n1>>n2;
+    bool isParen=false;
+
+    if(n1<=0 || n2<=0)
+    {
+        cout<<"Invalid input"<<endl;
+    }
+    else
+    {
+        while(n2>0) {
+            cifra2 = n2 % 10;
+            while (n1 > 0) {
+                cifra1=n1%100/10;
+                if (cifra1 == cifra2) {
+                    isParen = true;
+                } else {
+                    isParen = false;
+                    break;
+                }
+                if(isParen)
+                {
+                    n1=n1/100;
+                    break;
+                }
+            }
+            n2=n2/10;
+
+        }
+
+        if(isParen)
+        {
+            cout<<"PAREN"<<endl;
+        }
+        else
+        {
+            cout<<"NE"<<endl;
+        }
+    }
+
+}
