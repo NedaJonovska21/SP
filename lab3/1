@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int a, b;
+  cin>>a>>b;
+  int suma=0;
+
+  cout<<"broevite koi se dellivi so 3 a ne dellivi so 2 se: ";
+  for(int i=a; i<=b; i++)
+  {
+      if(i%3==0 && i%2!=0)
+      {
+          suma+=i;
+          cout<<i<<" ";
+      }
+  }
+  cout<<endl;
+
+  cout<<"Sumata na broevi dellivi so 3 a ne dellivi so 2 e: "<<suma<<endl;
+    return 0;
+}
