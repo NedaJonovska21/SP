@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, x;
+    cin>>n>>x;
+    bool razlicen;
+    int cifra, temp, finalenbr=0;
+    int tempX, cifraX, tempG;
+
+    for(int i=n-1; i>0; i--)
+    {
+        tempX=x;
+        temp=i;
+        while(temp>0) // 87
+        {
+            cifra=temp%10;
+            while(tempX>0) { // 7
+                cifraX = tempX % 10;
+                if (cifra != cifraX) {
+                    razlicen = true;
+                } else {
+                    razlicen = false;
+                    break;
+                }
+                tempX/=10;
+            }
+           if(!razlicen) {
+            break;
+           }
+           else {
+               temp/=10;
+               tempX=x;
+           }
+        }
+
+        if(razlicen)
+        {
+            finalenbr=i;
+            break;
+        }
+    }
+    cout << finalenbr << endl;
+    return 0;
+}
