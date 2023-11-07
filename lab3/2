@@ -1,0 +1,73 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int suma_poeni=0;
+    int poeni;
+    int ocenka;
+    bool uslov;
+ for(int i=0; i<=4; i++)
+ {
+     cin>>poeni;
+     suma_poeni+=poeni;
+ }
+
+ if(suma_poeni<=50)
+ {
+     cout<<"Predmetot ne e polozen"<<endl;
+     return 0;
+ }
+
+ else if(suma_poeni>=51 && suma_poeni<=60)
+    {
+     ocenka=6;
+     if(suma_poeni==60)
+     {
+        uslov= true;
+     }
+    }
+ else if(suma_poeni>=61 && suma_poeni<=70)
+ {
+     ocenka=7;
+     if(suma_poeni==70)
+     {
+         uslov=true;
+     }
+ }
+ else if(suma_poeni>=71 && suma_poeni<=80)
+ {
+     ocenka=8;
+     if(suma_poeni==80)
+     {
+         uslov=true;
+     }
+ }
+ else if(suma_poeni>=81 && suma_poeni<=90)
+ {
+     ocenka=9;
+     if(suma_poeni==90)
+     {
+         uslov=true;
+     }
+ }
+ else if(suma_poeni>=91 && suma_poeni<=100)
+ {
+     ocenka=10;
+ }
+ else
+ {
+     cout<<"vnesovte nevalidni poeni"<<endl;
+     return 0;
+ }
+
+ cout<<"Ocenka: "<<ocenka<<", poeni: "<<suma_poeni<<endl;
+ if(uslov)
+ {
+     cout<<"1"<<endl;
+ }
+ else
+ {
+     cout<<"0"<<endl;
+ }
+    return 0;
+}
