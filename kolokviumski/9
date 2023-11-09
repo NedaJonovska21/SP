@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    char c;
+    int suma=0;
+    int cifri=0;
+    while(true)
+    {
+        cin>>c;
+        if(c=='.')
+        {
+            break;
+        }
+        else if(c=='A' || c=='a')
+        {
+            suma+=10;
+        }
+        else if(c=='B'|| c=='b')
+        {
+            suma+=11;
+        }
+        else if(c=='C'|| c=='c')
+        {
+            suma+=12;
+        }
+        else if(c=='D' || c=='d')
+        {
+            suma+=13;
+        }
+        else if(c=='E' || c=='e')
+        {
+            suma+=14;
+        }
+        else if(c=='F' || c=='f')
+        {
+            suma+=15;
+        }
+        else
+        {
+            suma+=(c-'0');
+        }
+
+    }
+    cifri=suma%100;
+    if(suma%16==0)
+    {
+        if(cifri==16)
+        {
+            cout<<"Poln pogodok"<<endl;
+        }
+        else  {
+            cout << "Pogodok" << endl;
+        }
+
+    }
+    else
+    {
+        cout<<suma<<endl;
+    }
+
+    return 0;
+}
