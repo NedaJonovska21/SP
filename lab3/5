@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int points, sum=0, grade, highergrade=false;
+    for(int i=0; i<=4; i++)
+    {
+        cin>>points;
+        sum+=points;
+    }
+    if(sum<=50)
+    {
+        cout<<"Predmetot ne e polozen"<<endl;
+        return 0;
+    }
+    else if(sum>=51 && sum<=60)
+    {
+        grade=6;
+        if(sum==60)
+        {
+            highergrade=true;
+        }
+    }
+    else if(sum>=61 && sum<=70)
+    {
+        grade=7;
+        if(sum==70)
+        {
+            highergrade=true;
+        }
+    }
+    else if(sum>=71 && sum<=80)
+    {
+        grade=8;
+        if(sum==80)
+        {
+            highergrade=true;
+        }
+    }
+    else if(sum>=81 && sum<=90)
+    {
+        grade=9;
+        if(sum==90)
+        {
+            highergrade=true;
+        }
+    }
+    else if(sum>=91 && sum<=100)
+    {
+        grade=10;
+    }
+
+
+    if(grade==10)
+    {
+        cout<<"Ocenka: "<<grade<<", poeni: "<<sum<<endl;
+    }
+    else {
+        cout<<"Ocenka: "<<grade<<", poeni: "<<sum<<endl;
+        if (highergrade) {
+            cout << "Ima uslov za povisoka ocenka" << endl;
+        } else {
+            cout << "Nema uslov za povisoka ocenka" << endl;
+        }
+    }
+
+
+
+
+    return 0;
+}
