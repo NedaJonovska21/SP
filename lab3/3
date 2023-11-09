@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i;
+    float danok, ddv;
+    char t;
+    double suma_danoci=0;
+    for(int j=0; j<=2; j++) {
+        cin >> i >> t;
+        if (i <= 0) {
+            cout << "Vnesenata suma e nevalidna" << endl;
+            return 0;
+        }
+        else if(i>30000)
+        {
+            i=30000;
+        }
+        if  (i <= 30000) {
+
+            if (t == 'A') {
+                danok = i * 0.18;
+                suma_danoci += danok;
+            } else if (t == 'B') {
+                danok = i * 0.10;
+                suma_danoci += danok;
+            } else if (t == 'C') {
+                danok = i * 0.05;
+                suma_danoci += danok;
+            } else if (t == 'D') {
+                danok = i*1;
+                suma_danoci += danok;
+            }
+            else
+            {
+                danok=i*0.15;
+                suma_danoci+=danok;
+            }
+        }
+    }
+    ddv=(float)suma_danoci*0.15;
+    if(ddv>2100)
+    {
+        ddv=2100;
+    }
+
+    cout<<"Total VAT of the receipts is equal to: "<<suma_danoci<<"den"<<endl;
+    cout<<"Total refund VAT of the receipts is equal to: "<<ddv<<"den"<<endl;
+
+
+
+    return 0;
+}
