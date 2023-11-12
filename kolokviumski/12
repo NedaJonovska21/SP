@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, temp, brojac1=0, brojac2, cifra;
+    int max_cifra=-1, poz=0, i, brojac_max=0;
+    int nulta=0, prva=0, vtora=0, treta=0, cetvrta=0;
+    while(cin>>n)
+    {
+        if(n<0 || n>99999)
+        {
+            break;
+        }
+        max_cifra=-1;
+        poz=0;
+        i=0;
+        while(n>0)
+        {
+            cifra=n%10;
+            if(cifra>max_cifra)
+            {
+                max_cifra=cifra;
+                poz=i;
+            }
+            n/=10;
+            i++;
+        }
+        if(poz==0)
+        {
+            nulta++;
+        }
+        else if(poz==1)
+        {
+            prva++;
+        }
+        else if(poz==2)
+        {
+            vtora++;
+        }
+        else if(poz==3)
+        {
+            treta++;
+        }
+        else if(poz==4)
+        {
+            cetvrta++;
+        }
+    }
+
+
+
+
+    cout << "0: " << nulta << endl;
+    cout << "1: " << prva<< endl;
+    cout << "2: " << vtora << endl;
+    cout << "3: " << treta << endl;
+    cout << "4: " << cetvrta << endl;
+
+
+    return 0;
+}
