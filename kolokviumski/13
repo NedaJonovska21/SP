@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, max_cifra, cifra, prethodnamax_cifra=0;
+    int suma=0, temp;
+    while(cin>>n)
+    {
+        temp=n;
+        suma+=prethodnamax_cifra;
+        max_cifra=0;
+        cifra=0;
+        while(n>0)
+        {
+            cifra=n%10;
+            suma+=cifra;
+            if(max_cifra<cifra)
+            {
+                max_cifra=cifra;
+                prethodnamax_cifra=max_cifra;
+            }
+            n/=10;
+        }
+        cout<<temp<<": "<<suma<<endl;
+        suma=0;
+    }
+    return 0;
+}
