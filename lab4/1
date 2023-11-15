@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b;
+    cin>>a>>b;
+    int temp, obraten_br=0;
+    bool palindrom=false;
+    int najgolemPaldinrom=INT_MIN, najmalPalindrom=INT_MAX, momentalenPalindrom;
+    for(int i=a; i<=b; i++)
+    {
+        obraten_br=0;
+        temp=i;
+        while(temp>0)
+        {
+            obraten_br=obraten_br*10+(temp%10);
+            temp/=10;
+        }
+        temp=i;
+        if(obraten_br==temp)
+        {
+            palindrom=true;
+        }
+        else
+        {
+            palindrom=false;
+        }
+        if(palindrom==true)
+        {
+            momentalenPalindrom=obraten_br;
+            if(najgolemPaldinrom<momentalenPalindrom)
+            {
+                najgolemPaldinrom=momentalenPalindrom;
+            }
+             if(najmalPalindrom>momentalenPalindrom)
+            {
+                najmalPalindrom=momentalenPalindrom;
+            }
+        }
+    }
+    cout<<"Smallest Palindromic Number: "<<najmalPalindrom<<endl;
+    cout<<"Largest Palindromic Number: "<<najgolemPaldinrom<<endl;
+    return 0;
+}
