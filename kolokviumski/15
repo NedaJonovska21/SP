@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, temp, noOfDigits=0, digit;
+    int counter=0, firstdig, lastdig, ostatok;
+    int sum1=1, sum2=1, extend=1, middledigits;
+    bool wholenum=false, isTrue=false;
+    cin>>a>>b;
+    temp=0;
+    for(int i=a; i<=b; i++)
+    {
+        noOfDigits=0;
+        extend=1;
+        sum1=1;
+        temp=i;
+        while(temp)
+        {
+            temp/=10;
+            noOfDigits++;
+        }
+        while (noOfDigits-1>0)
+        {
+            noOfDigits--;
+            extend=extend*10;
+        }
+        firstdig=i/extend;
+        lastdig=i%10;
+        sum2=firstdig*10+lastdig;
+        middledigits=i/10;
+        while (middledigits>=10) {
+            digit = middledigits % 10;
+            if (digit!=0) {
+                sum1 *= digit % 10;
+                middledigits /= 10;
+                isTrue=true;
+            }
+            else {
+                isTrue = false;
+                break;
+            }
+        }
+        if(isTrue==true)
+        {
+            ostatok = sum1 / sum2;
+            if (sum1 == sum2 * ostatok && ostatok != 0) {
+                wholenum = true;
+                counter++;
+            } else {
+                wholenum = false;
+            }
+            if (wholenum == true) {
+                cout << i << " -> (" << sum1 << " == " << sum2 << " * " << ostatok << ")" << endl;
+            }
+        }
+    }
+
+    cout<<counter<<endl;
+
+    return 0;
+}
