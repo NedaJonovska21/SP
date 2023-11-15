@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, cifra, zbir=0, a;
+    bool parenzbir=false;
+    int momentalenzbir, maxzbir, maxBr;
+    cin>>n;
+    for(int i=0; i<n; i++)
+    {
+        zbir = 0;
+        cin>>a;
+        int temp=a;
+        while(temp)
+        {
+            cifra=temp%10;
+            zbir+=cifra;
+            if(zbir%2==0)
+            {
+                parenzbir=true;
+                momentalenzbir=zbir;
+            }
+            else {
+                parenzbir = false;
+            }
+            if(parenzbir==true) {
+                if (momentalenzbir > maxzbir) {
+                    maxzbir = momentalenzbir;
+                    maxBr=a;
+                }
+            }
+            temp/=10;
+        }
+    }
+    cout<<maxBr<<endl;
+    return 0;
+}
