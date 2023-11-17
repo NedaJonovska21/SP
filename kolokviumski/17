@@ -1,0 +1,62 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+   int N, today, date, day, today_day, month, today_month;
+   int razlika, razlika2, razlika3;
+   int today_year, year;
+   cin>>today;
+   today_year=today%10000;
+   today_month=today%1000000/1000;
+   if(today_month>12)
+   {
+       today_month=today_month/10;
+   }
+   today_day=today/1000000;
+   cin>>N;
+   for(int i=0; i<N; i++)
+   {
+       cin>>date;
+       year=date%10000;
+       month=date%1000000/10000;
+       if(month>12)
+       {
+           month=month/10;
+       }
+       day=date/1000000;
+       razlika=today_year-year;
+       razlika2=today_month-month;
+       razlika3=today_day-day;
+       if(razlika>18)
+       {
+           cout<<"YES"<<endl;
+       }
+       else if(razlika==18)
+       {
+           if(razlika2>0)
+           {
+               cout<<"YES"<<endl;
+           }
+           else if(razlika2==0)
+           {
+               if(razlika3<0)
+               {
+                   cout<<"NO"<<endl;
+               }
+               else {
+                   cout << "YES" << endl;
+               }
+           }
+           else
+           {
+               cout<<"NO"<<endl;
+           }
+       }
+       else
+       {
+           cout<<"NO"<<endl;
+       }
+   }
+   return 0;
+}
