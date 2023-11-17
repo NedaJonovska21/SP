@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int N, M, n, predvideni, suma=0, semestar;
+    float prosek;
+    float soodnos, max_soodnos;
+    double vkupen_prosek;
+    double max_prosek=0;
+    cin>>N;
+    for(int i=0; i<N; i++)
+    {
+        suma=0;
+        cin>>M;
+        for(int j=0; j<M; j++)
+        {
+            cin>>n;
+            suma+=n;
+
+        }
+        cin>>predvideni;
+        prosek=(float)suma/M;
+        soodnos=M/(double)predvideni;
+        vkupen_prosek=(double)prosek*soodnos+(double)(1-soodnos)*5;
+        if(vkupen_prosek>max_prosek || i==0)
+        {
+            max_prosek=vkupen_prosek;
+            semestar=i+1;
+            max_soodnos=soodnos;
+        }
+    }
+    cout<<"Semester: "<<semestar<<endl;
+    cout<<"Grade point average : "<<vkupen_prosek<<",  percentage of subjects passed: "<<max_soodnos*100<<"%"<<endl;
+    return 0;
+}
