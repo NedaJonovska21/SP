@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int N, p, m_p;
+    float procent;
+    cin>>N;
+    for(int i=0; i<N; i++)
+    {
+        cin>>p>>m_p;
+        procent=((float)p/m_p)*100;
+        if(procent>=90)
+        {
+            cout<<procent<<" 10"<<endl;
+        }
+        else if(procent>=80)
+        {
+            cout<<procent<<" 9"<<endl;
+        }
+        else if(procent>=70)
+        {
+            cout<<procent<<" 8"<<endl;
+        }
+        else if(procent>=60)
+        {
+            cout<<procent<<" 7"<<endl;
+        }
+        else if(procent>=50)
+        {
+            cout<<procent<<" 6"<<endl;
+        }
+        else
+        {
+            cout<<procent<<"FAIL"<<endl;
+        }
+    }
+    return 0;
+}
