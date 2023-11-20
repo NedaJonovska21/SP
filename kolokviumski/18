@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    int a, b, temp, cifra;
+    bool isTrue=false;
+    cin>>a>>b;
+    for(int i=a; i<=b; i++)
+    {
+        temp=i;
+        while(temp)
+        {
+            cifra=temp%10;
+            if(cifra%2==0 || cifra==0)
+            {
+                isTrue=true;
+            }
+            else
+            {
+                isTrue=false;
+                break;
+            }
+            temp/=10;
+        }
+        if(isTrue==true)
+        {
+            cout<<i<<endl;
+            break;
+        }
+    }
+    if(isTrue==false)
+    {
+        cout<<"NSN"<<endl;
+    }
+   return 0;
+}
