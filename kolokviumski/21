@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int A, B, C;
+    int sum=0;
+    cin>>A>>B>>C;
+    sum=A+B+C;
+    if(sum==180)
+    {
+        cout<<"YES"<<endl;
+        if(A==90 || B==90 || C==90)
+        {
+            cout<<"RIGHT"<<endl;
+        }
+        else if(A<90 && B<90 && C<90 )
+        {
+            cout<<"ACUTE"<<endl;
+        }
+        else if(A>90 || B>90 || C>90)
+        {
+            cout<<"OBTUSE"<<endl;
+        }
+    }
+    else
+    {
+        cout<<"NO"<<endl;
+    }
+   return 0;
+}
