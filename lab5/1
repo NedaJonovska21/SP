@@ -1,0 +1,31 @@
+#include <iostream>
+#include <climits>
+#include <cmath>
+
+using namespace std;
+
+int vrednost(int a, int b, int c)
+{
+    return abs(a - b) + abs(b - c);
+}
+
+int main()
+{
+    int n, a, b, c;
+    int minvred = INT_MAX; 
+    cin >> n;
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a >> b >> c;
+        int d = vrednost(a, b, c);
+
+        if (d < minvred) 
+        {
+            minvred = d; 
+        }
+    }
+
+    cout << minvred << endl;
+    return 0;
+}
