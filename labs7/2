@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+     int m,n, matrix[50][50];
+     cin>>n;
+     m=n;
+
+     for(int i=0; i<n; i++)
+     {
+         for(int j=0; j<m; j++)
+         {
+             cin>>matrix[i][j];
+         }
+
+     }
+
+     for(int i=0; i<n; i++)
+     {
+         for(int j=0; j<=i; j++)
+         {
+                 cout << matrix[j][i-j] << " ";
+         }
+
+         cout<<endl;
+     }
+    return 0;
+}
