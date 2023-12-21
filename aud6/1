@@ -1,0 +1,32 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int dijametar(double r)
+{
+    return 2*r;
+}
+int perimetar(double r)
+{
+    return 2*3.14*r;
+}
+int plostina(double r)
+{
+    return 3.14*3.14*r;
+}
+
+int main() {
+
+    double D, L, P, r;
+    cin>>r;
+
+    D= dijametar(r);
+    L= perimetar(r);
+    P= plostina(r);
+
+    cout<<D<<endl;
+    cout<<L<<endl;
+    cout<<P<<endl;
+
+    return 0;
+}
