@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+   int a[50], n, brp=0, brn=0;
+   int zbirparni=0, zbirneparni=0;
+   cin>>n;
+   for(int i=0; i<n; i++)
+   {
+       cin>>a[i];
+   }
+
+
+    for(int i=0; i<n; i++)
+    {
+        if(a[i]%2==0)
+        {
+            zbirparni+=a[i];
+            brp++;
+        }
+        else
+        {
+            zbirneparni+=a[i];
+            brn++;
+        }
+    }
+
+    double soodnos=(double)brp/brn;
+    cout<<"Sum even: "<<zbirparni<<endl;
+    cout<<"Sum odd: "<<zbirneparni<<endl;
+    cout<<"Rel: "<<soodnos<<endl;
+
+    return 0;
+}
