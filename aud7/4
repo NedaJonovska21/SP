@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, a[50];
+    int rastecka=1, opagjacka=1;
+    cin>>n;
+    for(int i=0; i<n; i++)
+    {
+        cin>>a[i];
+    }
+
+    for(int i=0; i<n-1; i++) {
+        if (a[i] <= a[i + 1]) {
+            opagjacka = 0;
+            break;
+        }
+    }
+    for(int i=0; i<n-1; i++) {
+        if (a[i] >= a[i + 1]) {
+            rastecka = 0;
+            break;
+        }
+    }
+
+
+
+    if(!rastecka && !opagjacka)
+    {
+        cout<<"Nizata ne e nitu rastecka nitu opagjacka"<<endl;
+    }
+    else  if(rastecka)
+    {
+        cout<<"Nizata e rastecka"<<endl;
+    }
+    else if(opagjacka)
+    {
+        cout<<"Nizata e opagjacka"<<endl;
+    }
+
+    return 0;
+}
