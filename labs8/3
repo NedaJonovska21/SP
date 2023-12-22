@@ -1,0 +1,41 @@
+#include <iostream>
+#include <climits>
+using namespace std;
+int ednakovBr(int a[], int n, int k, int i)
+{
+     if(i==n-1)
+     {
+         if(a[i]==k)
+         {
+             return 1;
+         }
+         else
+         {
+             return 0;
+         }
+     }
+
+     if(a[i]==k)
+     {
+         return 1+ ednakovBr(a, n, k, i+1);
+     }
+     else
+     {
+         return ednakovBr(a, n, k, i+1);
+     }
+}
+int main()
+{
+    int n, a[100], k;
+    cin>>n;
+    for(int i=0; i<n; i++)
+    {
+        cin>>a[i];
+    }
+    cin>>k;
+
+    int rez= ednakovBr(a, n, k, 0);
+    cout<<rez<<endl;
+
+    return 0;
+}
