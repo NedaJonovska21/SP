@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int a1[100], a2[100], n, m, i=0, j=0;
+  int a3[100], k=0, br=0;
+  cin>>n;
+  for( i=0; i<n; i++)
+  {
+      cin>>a1[i];
+  }
+
+  cin>>m;
+  for( j=0; j<m; j++)
+  {
+      cin>>a2[j];
+  }
+  i=0;
+  j=0;
+  while(i<n && j<m)
+  {
+      if(a1[i]<a2[j])
+      {
+          a3[k]=a1[i];
+          i++; k++;
+      }
+      else if(a2[j]<a1[i])
+      {
+          a3[k]=a2[j];
+          j++; k++;
+      }
+      else if(a2[j]==a1[i])
+      {
+          a3[k]=a1[i];
+          k++; i++; j++;
+          br++;
+      }
+  }
+  while(i<n)
+  {
+      a3[k]=a1[i];
+      i++; k++;
+  }
+  while(j<m)
+  {
+      a3[k]=a2[j];
+      j++; k++;
+  }
+
+  int size=m+n;
+  for(k=0; k<size-br; k++)
+  {
+      cout<<a3[k]<<" ";
+  }
+    return 0;
+}
