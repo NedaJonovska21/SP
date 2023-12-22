@@ -1,0 +1,45 @@
+#include <iostream>
+#include <climits>
+using namespace std;
+int par(int a[], int n)
+{
+    int minel= INT_MAX;
+    int br=0;
+
+    for(int i=0; i<n; i++)
+    {
+       if(a[i]<minel)
+       {
+           minel=a[i];
+       }
+    }
+
+    for(int i=0; i<n; i++)
+    {
+        if(a[i]==minel)
+        {
+            br++;
+        }
+    }
+
+    if(br%2==0)
+    {
+        return minel;
+    }
+    else
+    {
+        return 0;
+    }
+}
+int main()
+{
+    int n, a[100];
+    cin>>n;
+    for(int i=0; i<n; i++)
+    {
+        cin>>a[i];
+    }
+
+    cout<<par(a,n)<<endl;
+    return 0;
+}
