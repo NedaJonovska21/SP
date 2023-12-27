@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+
+void ascendingarray(int *a, int n,int *maxpoz, int *maxdolzina) {
+    *maxpoz = 0, *maxdolzina = 0;
+    int br=1, poz = 0, dolzina;
+
+    for(int i=0; i<n-1; i++)
+    {
+        if(a[i]<a[i+1])
+        {
+            br++;
+        }
+        else
+        {
+            dolzina=br;
+            if(dolzina>*maxdolzina)
+            {
+                *maxdolzina=dolzina;
+                *maxpoz=poz;
+            }
+            poz=i+1; br=1;
+        }
+    }
+
+    if(dolzina>*maxdolzina) {
+        *maxdolzina = dolzina;
+        *maxpoz = poz;
+    }
+
+}
+int main() {
+  int a[50], n, i, maxpoz, maxdolzina;
+  cin>>n;
+  for(i=0; i<n; i++)
+  {
+      cin>>*(a+i);
+  }
+    ascendingarray(a, n, &maxpoz, &maxdolzina);
+
+    for(i=maxpoz; i<maxpoz+maxdolzina; i++)
+    {
+        cout<<*(a+i)<<" "<<endl;
+    }
+
+    cout<<"Pozicijata e:"<<maxpoz<<endl;
+    cout<<"Dolzinata na maksimalnata podniza e:"<<maxdolzina<<endl;
+
+
+
+    return 0;
+}
