@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+bool ispalindrom(char *s)
+{
+    bool isTrue=false;
+    for(int i=0; s[i]!='\0'; i++)
+    {
+        if(*(s+i)==*(s+strlen(s)-i-1))
+        {
+            isTrue=true;
+        }
+        else
+        {
+            isTrue=false;
+        }
+    }
+
+    if(isTrue)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+int main() {
+    char s[100];
+    cin.getline(s,100);
+
+    bool result= ispalindrom(s);
+
+    if(result)
+    {
+        cout<<"Nizata e palindrom"<<endl;
+    }
+    else
+    {
+        cout<<"Nizata NE e palindrom"<<endl;
+    }
+
+    return 0;
+}
