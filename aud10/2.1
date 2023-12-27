@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+void transformation(int *a, int n)
+{
+    bool isTrue=false;
+    int size=n;
+    int a1[size], j=0;
+    if(n%2!=0)
+    {
+        isTrue=true;
+        *(a+n/2)+=*(a+n/2);
+    }
+    for(int i=0; i<n; i++)
+    {
+        if(isTrue)
+        {
+            if(i==n/2)
+            {
+                *(a1+i)=*(a+i);
+                continue;
+            }
+        }
+        *(a1+i)=*(a+i)+*(a+n-i-1);
+    }
+
+    for(int i=0; i<n; i++)
+    {
+        *(a+i)=*(a1+i);
+    }
+}
+
+int main() {
+    int a[100], n;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> *(a + i);
+    }
+
+    transformation(a,n);
+
+    for(int i=0;i<n; i++)
+    {
+        cout<<*(a+i)<<" ";
+    }
+    return 0;
+}
