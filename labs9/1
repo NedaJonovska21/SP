@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+int letterFrequency(char *text, char letter)
+{
+    int br1=0, br2=0;
+
+    int s= strlen(text);
+   for(int i=0; *(text+i)!='\0'; i++)
+   {
+       if(tolower(*(text+i))== tolower(letter))
+       {
+           br2++;
+       }
+   }
+   return ((float)br2/s)*100;
+}
+int main() {
+
+    char text[100];
+    char letter;
+
+    cin.getline(text, 100);
+    cin>>letter;
+
+    int result= letterFrequency(text, letter);
+    cout<<result<<endl;
+
+    return 0;
+}
