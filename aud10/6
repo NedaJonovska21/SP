@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main() {
+    char s[100], s1[100];
+    int l, poz;
+    cin.getline(s,100);
+    cin>>poz;
+    cin>>l;
+
+    if(strlen(s)>= poz && strlen(s)>=l)
+    {
+        strncpy(s1,s+poz, l);
+        s1[l]='\0';
+
+    }
+
+    cout<<s1<<endl;
+
+    return 0;
+}
