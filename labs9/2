@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+void transform(char *text, char letter)
+{
+    bool isTrue=false;
+    int poz1, poz2,j=0;
+    for(int i=0; text[i]!='\0'; i++)
+    {
+        if(tolower(text[i])== tolower(letter) && !isTrue)
+        {
+            poz1=i;
+            isTrue=true;
+        }
+
+        if(tolower(text[i]) == tolower(letter) && isTrue)
+        {
+            poz2=i;
+        }
+    }
+
+    for(int i=poz1; i<=poz2; i++)
+    {
+        text[j++]=text[i];
+    }
+    text[j]='\0';
+}
+int main() {
+
+    char text[100];
+    char letter;
+
+    cin.getline(text, 100);
+    cin>>letter;
+
+    transform(text, letter);
+
+    cout<<text<<endl;
+
+    return 0;
+}
