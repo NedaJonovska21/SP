@@ -1,0 +1,29 @@
+#include <iostream>
+#include <math.h>
+using namespace  std;
+int suma(int number) {
+    if (number == 0) {
+        return 0;
+    }
+    if (number % 10 >= 5) {
+        return 0 + suma(number / 10);
+    }
+    return number % 10 + suma(number / 10);
+}
+int main() {
+    int n, number, temp;
+    cin>>n;
+    int maxSuma=0, currsuma=0;
+    for(int i=0; i<n; i++) {
+        cin >> number;
+       currsuma=suma(number);
+       if(currsuma>maxSuma)
+       {
+           maxSuma=currsuma;
+           temp=number;
+       }
+    }
+
+cout<<temp<<endl;
+    return 0;
+}
