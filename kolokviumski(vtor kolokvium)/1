@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cstring>
+#include <cctype>
+
+using namespace std;
+
+int main() {
+    int cena, i = 0;
+    char sifra[50], dobitna[50];
+    int tip, maxtip;
+    double koeficient, maxkoeficient = 0.0, proizvod = 1.0;
+    int dobivka = 0;
+    cin >> cena;
+    while (true) {
+        cin>>sifra;
+        if (sifra[0] == '#') {
+            break;
+        }
+        cin >> tip >> koeficient;
+        proizvod *= koeficient;
+        if (koeficient > maxkoeficient) {
+            maxkoeficient = koeficient;
+            maxtip = tip;
+            strcpy(dobitna, sifra);
+        }
+    }
+    dobivka = cena * proizvod;
+    cout<<dobitna;
+
+    cout << " " << maxtip << " " << maxkoeficient << endl;
+    cout<<dobivka<<endl;
+    return 0;
+
+}
