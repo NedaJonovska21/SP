@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+int comparring(char *string,  char *word)
+{
+    int size, br=0;
+    size=strlen(word);
+    for(int i=0; i< strlen(string); i++) {
+       if( strncmp(word, string + i, size)==0) {
+           br++;
+       }
+    }
+    return br;
+}
+
+int main()
+{
+   char word[100], string[100];
+   cin>>word;
+   int n, rez, pojavuvanja[100], max=INT_MIN;
+   for(int i=0; i<100; i++)
+   {
+       pojavuvanja[i]=0;
+   }
+   cin>>n;
+   cin.ignore(100, '\n');
+   for(int i=0; i<n; i++) {
+       cin.getline(string, 100);
+       rez = comparring(string, word);
+       if(max<rez)
+       {
+           max=rez;
+       }
+       pojavuvanja[rez]++;
+   }
+    for(int i=0; i<=max; i++) {
+        cout<<i<<" : "<<pojavuvanja[i]<<endl;
+    }
+
+
+
+}
